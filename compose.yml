@@ -1,13 +1,12 @@
-
 services:
-
   backup:
-    image: rclone_cron:arm64
+    image: ghcr.io/jplegat/rclone_cron:arm64
     container_name: rclone_cron
     restart: unless-stopped
     environment:
-      - CRON_SCHEDULE=30 18 * * *
-      - COMMAND=rclone sync -v /mnt/SMB /mnt/BKP
+      - CRON_SCHEDULE=30 13 * * *
+      - COMMAND=rclone sync --multi-thread-streams=32 -P -L --metadata /mnt/SMB
+        /mnt/BKP
     volumes:
       - /mnt/BKP:/mnt/BKP
       - /mnt/SMB:/mnt/SMB

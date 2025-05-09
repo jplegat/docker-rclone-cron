@@ -1,8 +1,6 @@
 # docker-rclone-cron
 
-A lightweight Docker image (arm64) running **rclone** as a **cron job**.
-
-## [Crontab Guru](https://crontab.guru/)
+A lightweight Docker image (arm64) running **rclone** as a **cron** job.
 
 [Rclone](https://rclone.org/) is configurable with environment [variables](https://rclone.org/docs/#environment-variables).
 
@@ -38,3 +36,7 @@ services:
       - /mnt/BKP:/mnt/BKP
       - /mnt/SMB:/mnt/SMB
 ```
+
+Useful links:
+
+### [crontab guru](https://crontab.guru/)
